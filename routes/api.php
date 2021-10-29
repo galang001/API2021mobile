@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\API\phonecontroller;
+use App\Http\Controllers\API\brandcontroller;
 use App\Http\Controllers\API\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,4 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('login',[AuthController::class,'login']);
 Route::resource('phone',phonecontroller::class);
+Route::resource('brand',brandcontroller::class);
 Route::post('/phone/{id_phone}',[phonecontroller::class,'update']);
